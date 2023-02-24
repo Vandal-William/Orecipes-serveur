@@ -2,10 +2,6 @@ module.exports = {
   apps : [{
     script: 'index.js',
     watch: '.',
-    env_production: {
-        NODE_ENV: 'production'
-    }
-  
   }],
 
   deploy : {
@@ -15,9 +11,6 @@ module.exports = {
       ref  : 'origin/main',
       repo : 'git@github.com:Vandal-William/Orecipes-serveur.git',
       path : '/home/ubuntu/portfolio',
-      'pre-deploy-local': '',
-      'post-deploy' : 'npm install && pm2 reload ./current/ecosystem.config.js --env production',
-      'pre-setup': ''
     }
   }
 };
