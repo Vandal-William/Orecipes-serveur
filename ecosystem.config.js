@@ -14,9 +14,9 @@ module.exports = {
       host : '51.91.251.65',
       ref  : 'origin/main',
       repo : 'git@github.com:Vandal-William/Orecipes-serveur.git',
-      path : '/home/ubuntu/portfolio/current',
+      path : '/home/ubuntu/portfolio',
       'pre-deploy-local': '',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy' : 'npm install && pm2 reload current/ecosystem.config.js --env production',
       'pre-setup': ''
     }
   }
