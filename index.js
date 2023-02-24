@@ -12,6 +12,8 @@ const app = express();
 const port = 3011;
 const jwtSecret = 'OurSuperLongRandomSecretToSignOurJWTgre5ezg4jyt5j4ui64gn56bd4sfs5qe4erg5t5yjh46yu6knsw4q';
 
+app.use(express.static("./dist"));
+
 // users data
 const db = {
   users: [
@@ -68,7 +70,7 @@ const authorizationMiddleware = jwt({ secret: jwtSecret, algorithms: ['HS256'] }
 // Page d'accueil du serveur : GET /
 app.get('/', (req, res) => {
   console.log('>> GET /');
-  res.sendFile( __dirname + '/index.html');
+  res.sendFile('./dist', 'index.html');
 });
 
 // Liste des recettes : GET /recipes
