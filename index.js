@@ -65,7 +65,7 @@ app.use((req, res, next) => {
 });
 
 // prepare authorization middleware
-// // const authorizationMiddleware = jwt({ secret: jwtSecret, algorithms: ['HS256'] });
+// // cons = jwt({ secret: jwtSecret, algorithms: ['HS256'] });
 
 /* Routes */
 // Page d'accueil du serveur : GET /
@@ -110,7 +110,7 @@ app.post('/login', (req, res) => {
 });
 
 // Favorites recipes : GET /favorites
-app.get('/favorites', authorizationMiddleware, (req, res) => {
+app.get('/favorites', (req, res) => {
   console.log('>> GET /favorites', req.user);
 
   const user = db.users.find(user => user.id === req.user.userId);
