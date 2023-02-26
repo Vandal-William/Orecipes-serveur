@@ -2,8 +2,8 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const jwt = require('express-jwt');
-const jsonwebtoken = require('jsonwebtoken');
+// const jwt = require('express-jwt');
+// const jsonwebtoken = require('jsonwebtoken');
 
 // recipes data
 const recipes = require('./list.json');
@@ -11,7 +11,7 @@ const recipes = require('./list.json');
 // vars
 const app = express();
 const port = 5001;
-const jwtSecret = 'OurSuperLongRandomSecretToSignOurJWTgre5ezg4jyt5j4ui64gn56bd4sfs5qe4erg5t5yjh46yu6knsw4q';
+// // const jwtSecret = 'OurSuperLongRandomSecretToSignOurJWTgre5ezg4jyt5j4ui64gn56bd4sfs5qe4erg5t5yjh46yu6knsw4q';
 
 app.use(express.static("./dist"));
 
@@ -65,7 +65,7 @@ app.use((req, res, next) => {
 });
 
 // prepare authorization middleware
-const authorizationMiddleware = jwt({ secret: jwtSecret, algorithms: ['HS256'] });
+// // const authorizationMiddleware = jwt({ secret: jwtSecret, algorithms: ['HS256'] });
 
 /* Routes */
 // Page d'accueil du serveur : GET /
@@ -91,11 +91,11 @@ app.post('/login', (req, res) => {
 
   // http response
   if (user) {
-    const jwtContent = { userId: user.id };
-    const jwtOptions = { 
-      algorithm: 'HS256', 
-      expiresIn: '3h' 
-    };
+    // const jwtContent = { userId: user.id };
+    // const jwtOptions = { 
+    //   algorithm: 'HS256', 
+    //   expiresIn: '3h' 
+    // };
     console.log('<< 200', user.username);
     res.json({ 
       logged: true, 
