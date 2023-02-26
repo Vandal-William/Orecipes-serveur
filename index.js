@@ -9,7 +9,7 @@ const recipes = require('./list.json');
 
 // vars
 const app = express();
-const port = 3011;
+const port = 3021;
 const jwtSecret = 'OurSuperLongRandomSecretToSignOurJWTgre5ezg4jyt5j4ui64gn56bd4sfs5qe4erg5t5yjh46yu6knsw4q';
 
 app.use(express.static("./dist"));
