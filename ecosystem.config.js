@@ -1,6 +1,7 @@
 require('dotenv').config();
 module.exports = {
   apps : [{
+    name: 'Orecipes',
     script: 'index.js',
     watch: '.',
   }],
