@@ -100,7 +100,7 @@ app.post('/login', (req, res) => {
     res.json({ 
       logged: true, 
       pseudo: user.username,
-      token: jsonwebtoken.sign(jwtContent, jwtSecret, jwtOptions),
+      // token: jsonwebtoken.sign(jwtContent, jwtSecret, jwtOptions),
     });
   }
   else {
